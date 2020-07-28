@@ -6,6 +6,6 @@ I'm a senior software engineer with a focus on trying to help others with their 
 - 😄 My pronouns are he/him/his.
 - 💬 Ask me about climbing, photography, learning.
 - 📝 Read my writing: [jonathanyeong.com](https://jonathanyeong.com).
-- 📷 Follow my photography journey: [@jonathan.yeong](https://www.instagram.com/jonathan.yeong/).
+- 📷 Follow me on instagram: [@jonathan.yeong](https://www.instagram.com/jonathan.yeong/).
 - 🐦 Follow me on twitter: [@jonoyeong](https://twitter.com/jonoyeong).
 - 📧 Email me: [hello@jonathanyeong.com](mailto:hello@jonathanyeong.com).
