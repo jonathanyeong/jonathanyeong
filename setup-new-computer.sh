@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Setup script inspired by: https://github.com/vendasta/setup-new-computer-script/blob/master/setup-new-computer.sh
 COLUMNS=$(tput cols)
 
 printHeading() {
@@ -64,6 +65,8 @@ if ! command_exists brew; then
   printHeading "Installing Homebrew..."
   printDivider
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> /Users/jonathanyeong/.zprofile
+    eval "$(/opt/homebrew/bin/brew shellenv)"
   printDivider
 fi
 
@@ -126,7 +129,10 @@ printHeading "Installing applications"
     fi
 printDivider
 
-printHeading "Setting up Git config..."
+printHeading "Setting up Git..."
+printDivider
+    echo "✔ Set Git to store credentials in Keychain"
+    git config --global credential.helper osxkeychain
 printDivider
     if [ -n "$(git config --global user.email)" ]; then
         echo "✔ Git email is set to $(git config --global user.email)"
@@ -152,6 +158,9 @@ printDivider
     echo "✔ Configure git to always ssh when dealing with https github repos"
         git config --global url."git@github.com:".insteadOf https://github.com/
         # you can remove this change by editing your ~/.gitconfig file
+printDivider
+    echo "✔ Adding github.com to known_hosts file [~/.ssh/known_hosts]"
+        ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 printDivider
 
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
