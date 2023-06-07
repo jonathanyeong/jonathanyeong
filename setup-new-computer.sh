@@ -111,11 +111,18 @@ printHeading "Installing applications"
         printStep "Spotify"                  "brew install --cask spotify"
     fi
 
+    if [[ -d "/Applications/Notion.app" ]]; then
+        printDivider
+        echo "✔ Notion already installed. Skipping"
+    else
+        printStep "Notion"                "brew install --cask notion"
+    fi
+
     if [[ -d "/Applications/Sequel Ace.app" ]]; then
         printDivider
         echo "✔ Sequel Ace already installed. Skipping"
     else
-        printStep "Sequel Ace"                  "brew install --cask sequel-ace"
+        printStep "Sequel Ace"                "brew install --cask sequel-ace"
     fi
 printDivider
 
