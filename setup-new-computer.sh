@@ -76,6 +76,7 @@ printHeading "Installing brew packages"
     printStep "git"                         "brew install git"
     printStep "coreutils"                   "brew install coreutils"
     printStep "github"                      "brew install gh"
+    printStep "zsh-syntax-highlighting"     "brew install zsh-syntax-highlighting"
 printDivider
 
 printHeading "Installing applications"
